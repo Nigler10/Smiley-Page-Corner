@@ -1,0 +1,26 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+<div class="container mx-auto p-6">
+    <h1 class="text-3xl font-bold mb-6">Our Cakes</h1>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {% for product in products %}
+        <div class="card bg-base-100 shadow-lg rounded-lg overflow-hidden">
+            {% if product.image %}
+            <figure class="px-4 pt-4">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="rounded-md">
+            </figure>
+            {% endif %}
+            <div class="card-body">
+                <h2 class="card-title">{{ product.name }}</h2>
+                <p class="text-sm text-gray-600">{{ product.description|truncatechars:80 }}</p>
+                <p class="font-bold mt-2">₱{{ product.base_price }}</p>
+                <a href="{% url 'product-detail-page' product.id %}" 
+                   class="btn btn-primary mt-4 w-full">View Details</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

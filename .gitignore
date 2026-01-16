@@ -13,10 +13,16 @@ __pycache__/
 .DS_Store
 Thumbs.db
 
-# SQLite3 DB (optional, if you want fresh copies)
+# SQLite3 DB (optional)
 *.sqlite3
 
-# Ignore the collectstatic output (used only in deployment)
-Project/staticfiles/
+# Node modules
+node_modules/
 
-Project/secret_key.txt
+# Tailwind build output? Optional
+# If you want devs to rebuild, uncomment this
+# static/css/output.css
+
+# Django collectstatic (deployment only)
+Project/staticfiles/
+media/

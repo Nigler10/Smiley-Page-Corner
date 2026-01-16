@@ -1,4 +1,15 @@
-<header>
-    <a href="{% url 'home' %}">Home</a>
-    <a href="{% url 'about' %}">About</a>
+<header class="bg-base-100 shadow-md">
+    <nav class="container mx-auto flex justify-between items-center py-4 px-6">
+        <!-- Logo / Brand -->
+        <a href="{% url 'home' %}" class="text-2xl font-bold text-primary hover:text-primary-focus transition">
+            Smiley Page Corner
+        </a>
+
+        <!-- Links -->
+        <div class="flex gap-6">
+            <a href="{% url 'home' %}" class="hover:text-primary-focus transition">Home</a>
+            <a href="{% url 'about' %}" class="hover:text-primary-focus transition">About</a>
+            <a href="{% url 'product-list-page' %}" class="hover:text-primary-focus transition">Products</a>
+        </div>
+    </nav>
 </header>

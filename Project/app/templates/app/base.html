@@ -4,15 +4,24 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{% block title %}Smiley Page Corner{% endblock %}</title>
+    <!-- Tailwind & DaisyUI compiled CSS -->
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/output.css' %}">
 </head>
 
-{% include 'app/navbar.html' %}
+<body class="bg-base-200 min-h-screen flex flex-col">
 
-<body>
-    {% block content %}
-    {% endblock content %}
+    {% include 'app/navbar.html' %}
+
+    <main class="flex-1 container mx-auto p-6">
+        {% block content %}
+        {% endblock content %}
+    </main>
+
+    <footer class="bg-base-300 text-center py-4 mt-auto text-sm text-gray-600">
+        &copy; {{ now|date:"Y" }} Smiley Page Corner. All rights reserved.
+    </footer>
 
     <script src="{% static 'js/base.js' %}"></script>
 </body>
