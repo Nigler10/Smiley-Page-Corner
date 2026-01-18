@@ -1,0 +1,17 @@
+asgiref==3.11.0
+certifi==2026.1.4
+cloudinary==1.44.1
+dj-database-url==3.1.0
+Django==6.0.1
+django-storages==1.14.6
+djangorestframework==3.16.1
+gunicorn==23.0.0
+packaging==25.0
+pillow==12.1.0
+psycopg==3.3.2
+psycopg-binary==3.3.2
+python-decouple==3.8
+six==1.17.0
+sqlparse==0.5.5
+tzdata==2025.3
+urllib3==2.6.3
