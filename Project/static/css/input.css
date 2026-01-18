@@ -1,6 +1,0 @@
-/* run this in terminal 2
-npx tailwindcss@3.4.17 -i ./static/css/input.css -o ./static/css/output.css --watch */
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;

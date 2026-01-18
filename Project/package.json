@@ -11,11 +11,10 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
-    "autoprefixer": "^10.4.23",
+    "autoprefixer": "^10.4.22",
+    "daisyui": "^4.12.24",
     "postcss": "^8.5.6",
-    "tailwindcss": "^4.1.18"
-  },
-  "dependencies": {
-    "daisyui": "^5.5.14"
+    "postcss-cli": "^11.0.1",
+    "tailwindcss": "^3.4.18"
   }
 }

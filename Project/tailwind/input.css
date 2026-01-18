@@ -1,0 +1,7 @@
+/* run this in terminal 2
+npx tailwindcss -i ./tailwind/input.css -o ./static/css/output.css --watch
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

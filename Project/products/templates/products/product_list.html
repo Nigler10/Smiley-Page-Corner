@@ -1,6 +1,18 @@
 {% extends 'app/base.html' %}
 
 {% block content %}
+<div class="avatar">
+  <div class="w-24 rounded-xl">
+    <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+  </div>
+</div>
+<div class="avatar">
+  <div class="w-24 rounded-full">
+    <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+  </div>
+</div>
+<button class="btn btn-primary mt-4">Test Button</button>
+
 <div class="container mx-auto p-6">
     <h1 class="text-3xl font-bold mb-6">Our Cakes</h1>
 
@@ -16,8 +28,8 @@
                 <h2 class="card-title">{{ product.name }}</h2>
                 <p class="text-sm text-gray-600">{{ product.description|truncatechars:80 }}</p>
                 <p class="font-bold mt-2">₱{{ product.base_price }}</p>
-                <a href="{% url 'product-detail-page' product.id %}" 
-                   class="btn btn-primary mt-4 w-full">View Details</a>
+                <a href="{% url 'product-detail-page' product.id %}" class="btn btn-primary mt-4 w-full">View
+                    Details</a>
             </div>
         </div>
         {% endfor %}

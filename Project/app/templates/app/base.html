@@ -6,16 +6,18 @@
     <meta charset="UTF-8">
     <title>{% block title %}Smiley Page Corner{% endblock %}</title>
     <!-- Tailwind & DaisyUI compiled CSS -->
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="{% static 'css/output.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
 </head>
 
 <body class="bg-base-200 min-h-screen flex flex-col">
 
     {% include 'app/navbar.html' %}
 
+    <button class="btn btn-primary mt-4">Base Test Button</button>
     <main class="flex-1 container mx-auto p-6">
         {% block content %}
+
         {% endblock content %}
     </main>
 

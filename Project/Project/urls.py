@@ -9,6 +9,9 @@ urlpatterns = [
     
     # Products
     path('products/', include('products.urls')),
+    
+    # Customers
+    path("", include("customers.urls")),
 ]
 
 # Only for development

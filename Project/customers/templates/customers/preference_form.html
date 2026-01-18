@@ -1,0 +1,14 @@
+{% extends "app/base.html" %}
+
+{% block content %}
+<div class="max-w-lg mx-auto p-6">
+    <h1 class="text-2xl font-bold mb-4">Preferences for {{ product.name }}</h1>
+
+    <form method="post" class="space-y-4">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button class="btn btn-primary w-full">Submit Preference</button>
+    </form>
+</div>
+{% endblock %}
