@@ -1,0 +1,48 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto mt-10 p-6 border rounded-lg">
+    <h1 class="text-2xl font-bold mb-6">
+        Create Product
+    </h1>
+
+    <form method="POST" enctype="multipart/form-data" class="space-y-4">
+        {% csrf_token %}
+
+        <div>
+            <label class="block font-medium mb-1">Name</label>
+            {{ form.name }}
+        </div>
+
+        <div>
+            <label class="block font-medium mb-1">Description</label>
+            {{ form.description }}
+        </div>
+
+        <div>
+            <label class="block font-medium mb-1">Base Price</label>
+            {{ form.base_price }}
+        </div>
+
+        <div>
+            <label class="block font-medium mb-1">Category</label>
+            {{ form.category }}
+        </div>
+
+        <div>
+            <label class="block font-medium mb-1">Image</label>
+            {{ form.image }}
+        </div>
+
+        <div class="flex items-center gap-2">
+            {{ form.is_available }}
+            <label class="font-medium">Available</label>
+        </div>
+
+        <button type="submit" class="px-6 py-2 bg-black text-white rounded hover:opacity-80">
+            Save Product
+        </button>
+    </form>
+</div>
+{% endblock %}
