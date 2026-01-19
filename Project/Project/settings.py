@@ -19,24 +19,10 @@ SECRET_KEY = 'SECRET_KEY'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool)
 
-if not DEBUG:
-    # Production: Cloudinary storage
-    DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-else:
-    # Local dev: default filesystem
-    MEDIA_URL = '/media/'
-    MEDIA_ROOT = BASE_DIR / 'media'
-    
 
 ALLOWED_HOSTS = ["*", ".onrender.com"]
 
 CLOUDINARY_URL = config('CLOUDINARY_URL')
-
-# CLOUDINARY_STORAGE = {
-#     'CLOUD_NAME': config('CLOUDINARY_CLOUD_NAME', default=''),
-#     'API_KEY': config('CLOUDINARY_API_KEY', default=''),
-#     'API_SECRET': config('CLOUDINARY_API_SECRET', default=''),
-# }
 
 # Application definition
 
@@ -47,6 +33,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Cloudinary
+    'cloudinary',
+    'cloudinary_storage',
+    
     'app.apps.AppConfig',
 
     # 3rd Party
@@ -150,3 +141,8 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Media files (user-uploaded content)
 MEDIA_URL = '/media/'            # URL prefix
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # folder to store uploaded files
+
+if not DEBUG:
+    DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+else:
+    MEDIA_ROOT = BASE_DIR / 'media'
