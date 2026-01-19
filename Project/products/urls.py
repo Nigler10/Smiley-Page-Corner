@@ -12,4 +12,7 @@ urlpatterns = [
     # API endpoints
     path("api/products/", ProductListAPIView.as_view(), name="product-list"),
     path("api/products/<int:pk>/", ProductDetailAPIView.as_view(), name="product-detail"),
+    
+    
+    path("cloudinary-test/", views.cloudinary_test, name="cloudinary-test"),
 ]

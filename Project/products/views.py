@@ -3,6 +3,8 @@ from rest_framework import generics
 from .models import Product
 from .serializers import ProductSerializer
 from .forms import ProductForm
+from django.http import HttpResponse
+from django.conf import settings
 
 class ProductListAPIView(generics.ListAPIView):
     queryset = Product.objects.filter(is_available=True)
@@ -35,3 +37,8 @@ def product_create(request):
     return render(request, "products/product_create.html", {
         "form": form
     })
+
+def cloudinary_test(request):
+    cloud_url = getattr(settings, "CLOUDINARY_URL", "Not set")
+    default_storage = getattr(settings, "DEFAULT_FILE_STORAGE", "Not set")
+    return HttpResponse(f"CLOUDINARY_URL={cloud_url}<br>DEFAULT_FILE_STORAGE={default_storage}")
