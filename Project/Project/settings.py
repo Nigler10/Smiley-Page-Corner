@@ -19,6 +19,13 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool)
 
+# Use Cloudinary in production
+if not DEBUG:
+    DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+    # Optional: Cloudinary overwrites MEDIA_URL automatically
+else:
+    MEDIA_ROOT = BASE_DIR / 'media'  # Local dev storage
+
 
 ALLOWED_HOSTS = ["*", ".onrender.com"]
 
@@ -140,10 +147,3 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Media files (user-uploaded content)
 MEDIA_URL = '/media/'
-
-# Use Cloudinary in production
-if not DEBUG:
-    DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-    # Optional: Cloudinary overwrites MEDIA_URL automatically
-else:
-    MEDIA_ROOT = BASE_DIR / 'media'  # Local dev storage
