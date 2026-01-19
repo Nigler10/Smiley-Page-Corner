@@ -1,6 +1,16 @@
 {% extends 'app/base.html' %}
 
 {% block content %}
+<div class="avatar">
+  <div class="w-24 rounded-xl">
+    <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+  </div>
+</div>
+<div class="avatar">
+  <div class="w-24 rounded-full">
+    <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+  </div>
+</div>
 <div class="container mx-auto p-6">
     <h1 class="text-3xl font-bold mb-6">Our Cakes</h1>
     <a href="{% url 'product-create-page' %}"
