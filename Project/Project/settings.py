@@ -139,10 +139,10 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Media files (user-uploaded content)
-MEDIA_URL = '/media/'            # URL prefix
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # folder to store uploaded files
+MEDIA_URL = '/media/'  # URL prefix
 
+# Use Cloudinary for all uploads in production
 if not DEBUG:
     DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 else:
-    MEDIA_ROOT = BASE_DIR / 'media'
+    MEDIA_ROOT = BASE_DIR / 'media'  # Local dev storage
